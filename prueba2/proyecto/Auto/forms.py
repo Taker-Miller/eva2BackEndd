@@ -6,7 +6,7 @@ class AutoForm(forms.ModelForm):
     
     def clean_numero_de_ruedas(self):
         numero_de_ruedas = self.cleaned_data['numero_de_ruedas']
-        if numero_de_ruedas <= 0 or numero_de_ruedas > 4:
+        if numero_de_ruedas <= 1 or numero_de_ruedas > 4:
             raise ValidationError('Número de ruedas inválido. Debe ser entre 1 y 4.')
         return numero_de_ruedas
 
